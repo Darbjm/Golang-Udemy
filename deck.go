@@ -34,6 +34,7 @@ func (d deck) print() {
 }
 
 func deal(d deck, handSize int) (deck, deck) {
+	// return cards from 0 to handsize and from handsize to end
 	return d[:handSize], d[handSize:]
 }
 
@@ -57,6 +58,7 @@ func newDeckFromFile(filename string) deck {
 }
 
 func (d deck) shuffle() {
+	// randomize everytime
 	source := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(source)
 
