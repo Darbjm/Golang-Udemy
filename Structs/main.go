@@ -14,16 +14,16 @@ type person struct {
 }
 
 func main() {
-	// can use person{"Alex", "Anderson"} to assign structs but its a bad idea
-	alex := person{firstName: "Alex", lastName: "Anderson"}
-	fmt.Println(alex)
-	// to have intialize as empty use
-	var jack person
-	jack.firstName = "jack"
-	jack.lastName = "nickels"
+	// // can use person{"Alex", "Anderson"} to assign structs but its a bad idea
+	// alex := person{firstName: "Alex", lastName: "Anderson"}
+	// fmt.Println(alex)
+	// // to have intialize as empty use
+	// var jack person
+	// jack.firstName = "jack"
+	// jack.lastName = "nickels"
 
-	fmt.Println(jack)
-	fmt.Printf("%+v", jack)
+	// fmt.Println(jack)
+	// fmt.Printf("%+v", jack)
 
 	jim := person{
 		firstName: "Jim",
@@ -34,5 +34,15 @@ func main() {
 		},
 	}
 
-	fmt.Printf("%+v", jim)
+	jimPointer := &jim
+	jimPointer.updateName("jimmy")
+	jim.print()
+}
+
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
 }
