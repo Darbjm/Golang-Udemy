@@ -34,15 +34,17 @@ func main() {
 		},
 	}
 
+	// points to ram
 	jimPointer := &jim
 	jimPointer.updateName("jimmy")
 	jim.print()
 }
 
-func (p person) print() {
-	fmt.Printf("%+v", p)
-}
-
+// pointer to person
 func (pointerToPerson *person) updateName(newFirstName string) {
 	(*pointerToPerson).firstName = newFirstName
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
 }
