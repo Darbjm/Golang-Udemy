@@ -13,6 +13,9 @@ type person struct {
 	contactInfo
 }
 
+// When changing things in a function remember the difference bewteen value types and reference types.
+// Check image for reference
+
 func main() {
 	// // can use person{"Alex", "Anderson"} to assign structs but its a bad idea
 	// alex := person{firstName: "Alex", lastName: "Anderson"}
@@ -35,7 +38,7 @@ func main() {
 	}
 
 	// points to ram
-	jimPointer := &jim
+	jimPointer := &jim // could just use the line below as a shortcut
 	jimPointer.updateName("jimmy")
 	jim.print()
 }
