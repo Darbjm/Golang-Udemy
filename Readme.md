@@ -1,4 +1,4 @@
-<h1>Golang Udemy</h1>
+<h1>Golang Udemy - Record of learning</h1>
 <h2>I'm excited by Golang because of scalability, Goroutines, and ease of use.</h2>
 <br/>
 <br/>
